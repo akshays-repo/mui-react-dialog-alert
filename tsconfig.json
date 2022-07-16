@@ -20,4 +20,5 @@
     "src/**/*.test.tsx",
     "src/**/*.stories.tsx",
   ],
+  "include": ["src/**/*.ts*"],
 }

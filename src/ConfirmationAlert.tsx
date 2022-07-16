@@ -11,19 +11,14 @@ import { useConfirmationStore } from "./confirmAlertHook";
 export const AlertDialog: FunctionComponent = () => {
   const {
     show,
-    buttonCancelLabel,
+    cancelLabel,
     handleClose,
     onConfirmation,
     onCancel,
     title,
     subtitle,
-    buttonConfirmLabel,
+    confirmLabel,
   } = useConfirmationStore();
-
-  const handleClickButton = () => {
-    onCancel();
-    handleClose();
-  };
 
   return (
     <Dialog
@@ -39,7 +34,14 @@ export const AlertDialog: FunctionComponent = () => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClickButton}>{buttonCancelLabel}</Button>
+        <Button
+          onClick={() => {
+            if (onCancel) onCancel();
+            if (handleClose) handleClose();
+          }}
+        >
+          {cancelLabel}
+        </Button>
         <Button
           onClick={() => {
             onConfirmation();
@@ -47,7 +49,7 @@ export const AlertDialog: FunctionComponent = () => {
           }}
           autoFocus
         >
-          {buttonConfirmLabel}
+          {confirmLabel}
         </Button>
       </DialogActions>
     </Dialog>
