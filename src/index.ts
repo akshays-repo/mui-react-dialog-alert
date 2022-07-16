@@ -1,5 +1,5 @@
-export { AlertDialog } from "./component/ConfirmationAlert";
+export { AlertDialog } from "./ConfirmationAlert";
 export {
   showAlertConfirmarion,
   useConfirmationStore,
-} from "./hook/confirmAlertHook";
+} from "./confirmAlertHook";
