@@ -1,11 +1,13 @@
 {
   "name": "mui-react-alert",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "source": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
   },
   "author": "",
   "license": "ISC",
@@ -14,11 +16,20 @@
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.3",
     "@types/react": "^18.0.15",
+    "@types/rollup-plugin-peer-deps-external": "^2.2.1",
     "react": "^18.2.0",
     "rollup": "^2.77.0",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "tslib": "^2.4.0",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/material": "^5.9.0",
+    "emotion": "^11.0.0",
+    "zustand": "^4.0.0-rc.1"
   }
 }
